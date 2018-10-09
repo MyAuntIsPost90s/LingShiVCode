@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
- * ��֤��
+ * 验证码
  * 
  * @author caich
  *

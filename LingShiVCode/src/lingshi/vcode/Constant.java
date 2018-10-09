@@ -1,7 +1,7 @@
 package lingshi.vcode;
 
 /**
- * ³£Á¿
+ * å¸¸é‡
  * 
  * @author caich
  *
@@ -9,7 +9,7 @@ package lingshi.vcode;
 public class Constant {
 
 	/**
-	 * ×ÖÌåÖ»ÏÔÊ¾´óĞ´£¬È¥µôÁË1,0,i,o¼¸¸öÈİÒ×»ìÏıµÄ×Ö·û
+	 * ä¸åŒ…å«1,0,i,oç­‰å¹²æ‰°å­—æ¯
 	 */
 	public static final String VERIFY_CODES = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ";
 	
