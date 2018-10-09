@@ -1,12 +1,12 @@
 package lingshi.vcode;
 
 import java.awt.Graphics2D;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 
 interface BaseVCode {
 
 	/**
-	 * Éú³ÉËæ»úÊı
+	 * è·å–éªŒè¯ç 
 	 * 
 	 * @param len
 	 * @return
@@ -14,14 +14,14 @@ interface BaseVCode {
 	String getVerifyCode(int len);
 
 	/**
-	 * »ñÈ¡»­²¼
+	 * è·å–ç”»ç¬”
 	 * 
 	 * @return
 	 */
-	Graphics2D getGraphics(int width, int height);
+	Graphics2D getGraphics(BufferedImage image);
 
 	/**
-	 * ÉèÖÃ±³¾°
+	 * è®¾ç½®èƒŒæ™¯
 	 * 
 	 * @param graphics
 	 * @param width
@@ -30,24 +30,24 @@ interface BaseVCode {
 	void setBackground(Graphics2D graphics);
 
 	/**
-	 * ÉèÖÃ±ß¿ò
+	 * è®¾ç½®è¾¹æ¡†
 	 */
 	void setBorder(Graphics2D graphics);
 
 	/**
-	 * ÉèÖÃ¸ÉÈÅ
+	 * è®¾ç½®å¹²æ‰°çº¿
 	 */
 	void setInterfere(Graphics2D graphics);
 
 	/**
-	 * ÉèÖÃÔëµã
+	 * è®¾ç½®å™ªç‚¹
 	 * 
 	 * @param graphics
 	 */
 	void setNoise(Graphics2D graphics);
 
 	/**
-	 * ÉèÖÃÅ¤Çú
+	 * è®¾ç½®æ‰­æ›²
 	 * 
 	 * @param graphics
 	 * @param width
@@ -56,16 +56,9 @@ interface BaseVCode {
 	void setShear(Graphics2D graphics);
 
 	/**
-	 * ÉèÖÃ¶şÎ¬Âë
+	 * è®¾ç½®éªŒè¯ç 
 	 * 
 	 * @param code
 	 */
 	void setCode(Graphics2D graphics, String code);
-
-	/**
-	 * »ñÈ¡Í¼Æ¬
-	 * 
-	 * @return
-	 */
-	Image getImage();
 }

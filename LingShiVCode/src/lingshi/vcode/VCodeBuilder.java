@@ -2,6 +2,7 @@ package lingshi.vcode;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +10,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- * —È÷§¬Îππ‘Ï’ﬂ
+ * È™åËØÅÁ†ÅÊûÑÈÄ†
  * 
  * @author caich
  *
@@ -26,19 +27,20 @@ public class VCodeBuilder {
 			ImageIO.write((RenderedImage)image, "png", file);
 		}
 	}
-
+	
 	public static Image getVCodeImage(int width, int height, String code) {
 		BaseVCode vCode = new VCode();
 		Graphics2D graphics = null;
 		try {
-			graphics = vCode.getGraphics(width, height);
+			BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+			graphics = vCode.getGraphics(image);
 			vCode.setBorder(graphics);
 			vCode.setBackground(graphics);
 			vCode.setInterfere(graphics);
 			vCode.setNoise(graphics);
 			vCode.setShear(graphics);
 			vCode.setCode(graphics, code);
-			return vCode.getImage();
+			return image;
 		} finally {
 			if (graphics != null) {
 				graphics.dispose();

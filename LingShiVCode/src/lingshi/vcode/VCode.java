@@ -4,13 +4,12 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
- * ÑéÖ¤Âë
+ * ï¿½ï¿½Ö¤ï¿½ï¿½
  * 
  * @author caich
  *
@@ -36,8 +35,8 @@ public class VCode implements BaseVCode {
 	}
 
 	@Override
-	public Graphics2D getGraphics(int width, int height) {
-		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+	public Graphics2D getGraphics(BufferedImage image) {
+		this.image = image;
 		Graphics2D codeGraphics = image.createGraphics();
 		return codeGraphics;
 	}
@@ -56,8 +55,8 @@ public class VCode implements BaseVCode {
 
 	@Override
 	public void setInterfere(Graphics2D graphics) {
-		// »æÖÆ¸ÉÈÅÏß
-		graphics.setColor(getRandColor(160, 200));// ÉèÖÃÏßÌõµÄÑÕÉ«
+		// ï¿½ï¿½ï¿½Æ¸ï¿½ï¿½ï¿½ï¿½ï¿½
+		graphics.setColor(getRandColor(160, 200));// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
 		for (int i = 0; i < 20; i++) {
 			int x = random.nextInt(image.getWidth() - 1);
 			int y = random.nextInt(image.getHeight() - 1);
@@ -69,7 +68,7 @@ public class VCode implements BaseVCode {
 
 	@Override
 	public void setNoise(Graphics2D graphics) {
-		float yawpRate = 0.05f;// ÔëÉùÂÊ
+		float yawpRate = 0.05f;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int area = (int) (yawpRate * image.getWidth() * image.getHeight());
 		for (int i = 0; i < area; i++) {
 			int x = random.nextInt(image.getWidth());
@@ -134,11 +133,6 @@ public class VCode implements BaseVCode {
 		}
 
 		graphics.dispose();
-	}
-
-	@Override
-	public Image getImage() {
-		return image;
 	}
 
 	private int getRandomIntColor() {
